@@ -4,17 +4,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title>Catalog</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
+<div class="container">
 
 <h1>Mop Shop</h1>
 
-<table>
-    <tr th:each="product : ${all}">
-        <td th:text="${product.name}"></td>
-        <td>Kolom 2</td>
-    </tr>
-</table>
+    <table class="table" th:unless="${all.isEmpty()}">
+
+        <thead class="table__head">
+            <tr>
+                <td>Name</td>
+                <td>Price</td>
+            </tr>
+        </thead>
+
+        <tbody class="table__body">
+            <tr th:each="product : ${all}">
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.price}"></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>
 
 </body>
 </html>
