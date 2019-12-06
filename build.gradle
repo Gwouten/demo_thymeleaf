@@ -34,10 +34,12 @@ dependencyManagement {
     }
 }
 
+
 test {
     useJUnitPlatform()
 }
 
+apply plugin: "org.kravemir.gradle.sass"
 sass {
     main {
         srcDir = file("$projectDir/src/main/java/resources/static/scss")
