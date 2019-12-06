@@ -1,5 +1,4 @@
 plugins {
-    id 'org.kravemir.gradle.sass' version '1.2.2'
     id 'org.springframework.boot' version '2.2.1.RELEASE'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
     id 'java'
@@ -37,12 +36,4 @@ dependencyManagement {
 
 test {
     useJUnitPlatform()
-}
-
-apply plugin: "org.kravemir.gradle.sass"
-sass {
-    main {
-        srcDir = file("$projectDir/src/main/java/resources/static/scss")
-        outDir = file("$buildDir/resources/main/static/css")
-    }
 }
